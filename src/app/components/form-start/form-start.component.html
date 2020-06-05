@@ -1,0 +1,54 @@
+<div class="container">
+		<div class="row">
+			<div class="col-sm-9 col-md-10 col-lg-7 mx-auto">
+				<div class="card card-signin my-5">
+					<div class="card-body">
+						<h5 class="card-title text-center">
+							<i class="fa fa-edit mr-2"></i>
+							Solicitar cotação
+							<br />
+						</h5>
+	
+						<form class="form-signin">
+
+								<div class="row">
+										<div class="col-md-6">
+														<div class="form-label-group">
+																<input id="input1" name="input1" type="text" [(ngModel)]="nomeCliente" class="form-control" placeholder="Nome cliente" required>
+																<label for="input1">Nome Cliente</label>
+														</div>
+										</div>
+										<div class="col-md-6">
+														<div class="form-label-group">
+																<input id="input2" name="input2" type="text" [(ngModel)]="nomeSolicitante" class="form-control" placeholder="Nome Solicitante" required>
+																<label for="input2">Nome Solicitante</label>
+														</div>
+										</div>
+								</div>
+
+								<div class="row">
+										<div class="col-md-6">
+														<div class="form-label-group">
+																<input id="input3" name="input3" type="number" [(ngModel)]="quantidadeMercadoria" class="form-control" placeholder="Quantidade Mercadoria" required>
+																<label for="input3">Quantidade Mercadoria</label>
+														</div>
+										</div>
+										<div class="col-md-6">
+														<div class="form-label-group">
+																<input id="input4" name="input4" type="text" [(ngModel)]="tipoMercadoria" class="form-control" placeholder="Tipo Mercadoria" required>
+																<label for="input4">Tipo Mercadoria</label>
+														</div>
+										</div>
+									</div>
+
+							<hr class="my-4">
+
+							<button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" (click)="save()">Iniciar</button>
+						</form>
+	
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,75 @@
+<div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-10 col-lg-7 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body" *ngIf="tarefa">
+                <h5 class="card-title text-center">
+                  <i class="fa fa-edit mr-2"></i>
+                  {{ tarefa.valorMercadoria ? 'Recebimento' : 'Solicitação'}} de Cotação
+                  <br />
+                </h5>
+      
+                <form class="form-signin">
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input1" type="text" disabled="disabled" [value]="tarefa.nomeCliente" class="form-control" placeholder="Nome cliente" required>
+                                    <label for="input1">Nome Cliente</label>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input2" type="text" disabled="disabled" [value]="tarefa.nomeSolicitante" class="form-control" placeholder="Nome Solicitante" required>
+                                    <label for="input2">Nome Solicitante</label>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input1" type="text" disabled="disabled" [value]="tarefa.quantidadeMercadoria" class="form-control" placeholder="Quantidade Mercadoria" required>
+                                    <label for="input1">Quantidade Mercadoria</label>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input2" type="text" disabled="disabled" [value]="tarefa.tipoMercadoria" class="form-control" placeholder="Tipo Mercadoria" required>
+                                    <label for="input2">Tipo Mercadoria</label>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="!tarefa.valorMercadoria">
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input10" type="number" required="required" name="valorMercadoria" [(ngModel)]="valorMercadoria" class="form-control" placeholder="Valor Mercadoria" required>
+                                    <label for="input10">Valor Mercadoria</label>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="tarefa.valorMercadoria">
+                        <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input id="input1" type="text" disabled="disabled" [value]="tarefa.valorMercadoria" class="form-control" placeholder="Valor Mercadoria" required>
+                                    <label for="input1">Valor Mercadoria</label>
+                                </div>
+                        </div>
+                    </div>
+                
+    
+                  <hr class="my-4">
+                  <button *ngIf="tarefa.valorMercadoria" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="save()">Completar</button>
+
+                  <button *ngIf="!tarefa.valorMercadoria" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="salvar('APROVADO')">Aprovar</button>
+                  <button *ngIf="!tarefa.valorMercadoria" class="btn btn-lg btn-danger btn-block text-uppercase" type="submit" (click)="salvar('REPROVADO')">Reprovar</button>
+                </form>
+      
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

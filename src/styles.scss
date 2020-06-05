@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: #bcc1c7;
+    background: linear-gradient(to right, rgb(177, 178, 179), rgb(237, 240, 241));
+}
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}

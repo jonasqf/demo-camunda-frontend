@@ -1,0 +1,52 @@
+<div>
+        <div class="row">
+          <div class="col-md-11 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body" style="min-height: 700px;">
+                <h5 class="card-title text-center">
+                  <i class="fa fa-file-text-o mr-2"></i>
+                  Tarefas pendentes
+                </h5>
+      
+                <div class="list-group"  >
+                  <a href="" *ngFor="let tarefa of tarefas" (click)="goTo($event, tarefa.idTarefa)" class="list-group-item list-group-item-action">
+                    <p class="font-20 text-center ">
+                        <b>
+                            {{ tarefa.valorMercadoria ? 'Recebimento' : 'Solicitação'}} de Cotação
+                        </b>
+                    </p>
+
+                    <div class="row" >
+                        <!-- <div class="col-md-4"></div>-->
+                        <div class="col-md-3">
+                            <b>Nome Cliente</b>: {{ tarefa.nomeCliente }}
+                        </div>
+                        <div class="col-md-3">
+                            <b>Nome Solicitante</b>: {{ tarefa.nomeSolicitante }}
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row" >
+                       <!-- <div class="col-md-4"></div>-->
+                        <div class="col-md-3">
+                            <b>Quantidade Mercadoria</b>: {{ tarefa.quantidadeMercadoria }}
+                        </div>
+                        <div class="col-md-3">
+                            <b>Tipo Mercadoria</b>: {{ tarefa.tipoMercadoria }}
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3" *ngIf="tarefa.valorMercadoria">
+                            <b>Valor Mercadoria</b>: R$ {{ tarefa.valorMercadoria }},00
+                        </div>
+                    </div>
+                  </a>
+                </div>
+      
+                <h5 class="text-center mt-5" *ngIf="tarefas.length == 0">
+                    Não há tarefas disponiveis.
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
